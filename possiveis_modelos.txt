@@ -1,0 +1,18 @@
+Considerando que o projeto é de Classificação Binária, e a intenção que temos é
+realizar um benchmark de 3 modelos diferentes. Abaixo teremos os tipos de modelos que
+poderão ser utilizados para o trabalho
+
+- Arvores de Decisao
+
+Random Forest, XGBoost, LightGBM, entre outros
+
+- Modelos Lineares e Probabilísticos
+
+Regressão Logística e Support Vector Machines
+
+- Modelos Baseados em Distância e Probabilidade Estatística
+
+K-Nearest Neighbors, Naive Bayes
+
+Essa lista é apenas um conjunto de opções que podem ser escolhido, será preciso realizar analise do dataset para ver
+quais dos modelos seriam mais adequados para esse caso. Logo eles estão sujeitos a mudança.
