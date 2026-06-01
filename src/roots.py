@@ -8,9 +8,6 @@ PROJECT_ROOT = CURRENT_DIR.parent
 
 # Diretórios principais do projeto.
 DATA_DIR = PROJECT_ROOT / "data"
-RAW_DATA_DIR = DATA_DIR / "raw"
-PROCESSED_DATA_DIR = DATA_DIR / "processed"
-INTERIM_DATA_DIR = DATA_DIR / "interim"
 
 MODELS_DIR = PROJECT_ROOT / "models"
 NOTEBOOKS_DIR = PROJECT_ROOT / "notebooks"
@@ -29,9 +26,6 @@ CONFIG_FILE = PROJECT_ROOT / "config.yaml"
 def create_required_directories():
     """Cria com segurança os diretórios de trabalho quando ainda não existem."""
     required_dirs = [
-        RAW_DATA_DIR,
-        PROCESSED_DATA_DIR,
-        INTERIM_DATA_DIR,
         MODELS_DIR,
         REPORTS_DIR,
         FIGURES_DIR,
