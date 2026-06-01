@@ -1,0 +1,4 @@
+experiment_id,experiment_label,fpr,tpr,threshold
+path_a,Caminho A - Árvore de Decisão,0.0,0.0,inf
+path_a,Caminho A - Árvore de Decisão,0.22734646581691773,0.7846048423937871,1.0
+path_a,Caminho A - Árvore de Decisão,1.0,1.0,0.0
