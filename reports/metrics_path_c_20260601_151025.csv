@@ -1,0 +1,8 @@
+experiment_id,experiment_label,metric,cv_mean,cv_std,out_of_fold
+path_c,Caminho C - Naive Bayes Gaussiano,accuracy,0.5242137216777112,0.01441036432689889,0.5242148855400898
+path_c,Caminho C - Naive Bayes Gaussiano,precision,0.5196051657091351,0.010346661725233495,0.5196364816617981
+path_c,Caminho C - Naive Bayes Gaussiano,recall,0.7313835511948424,0.02347225020239302,0.7313841936957515
+path_c,Caminho C - Naive Bayes Gaussiano,f1,0.6074895097003207,0.013947686108511412,0.6075901328273244
+path_c,Caminho C - Naive Bayes Gaussiano,f1_class_0,0.39566609998610247,0.019524445881550168,0.39585159217061056
+path_c,Caminho C - Naive Bayes Gaussiano,f1_class_1,0.6074895097003207,0.013947686108511412,0.6075901328273244
+path_c,Caminho C - Naive Bayes Gaussiano,roc_auc,0.5234211180539541,0.013496136722339026,0.5230504942282252
