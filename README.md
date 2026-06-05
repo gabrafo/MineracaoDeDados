@@ -1,6 +1,8 @@
 # Trabalho Mineração de Dados
 
-Este projeto contém uma análise e modelagem de dados para uma tarefa de mineração de dados. O código principal está organizado em um notebook Jupyter (`notebook.ipynb`) e os dados de treino/teste estão na pasta `data/`.
+Este projeto contém uma análise e modelagem para a base Spaceship Titanic. A análise exploratória está em [`notebooks/eda.ipynb`](notebooks/eda.ipynb), e o notebook principal de modelagem está em [`notebooks/notebook.ipynb`](notebooks/notebook.ipynb).
+
+A modelagem usa uma pipeline de pré-processamento com engenharia de atributos, imputação de valores ausentes, validação cruzada estratificada e otimização de hiperparâmetros com Optuna.
 
 ## Requisitos
 
@@ -32,7 +34,7 @@ Em seguida, ative o ambiente virtual:
 
 > Se `python3` não estiver disponível, use `python` conforme a instalação do seu sistema.
 
-## Instalar dependências
+## Instalar Dependências
 
 Com o ambiente virtual ativado, instale os pacotes listados em `requirements.txt`:
 
@@ -40,36 +42,47 @@ Com o ambiente virtual ativado, instale os pacotes listados em `requirements.txt
 pip install -r requirements.txt
 ```
 
-## Executar o projeto
+Entre as dependências principais estão `pandas`, `numpy`, `scikit-learn`, `matplotlib`, `seaborn`, `joblib` e `optuna`.
 
-O notebook principal é `notebook.ipynb`.
+## Executar O Projeto
 
-Se você tiver Jupyter instalado, abra-o com:
+Abra o Jupyter na raiz do projeto:
 
 ```bash
 jupyter notebook
 ```
 
-Depois, carregue `notebook.ipynb` no navegador.
+Depois, execute os notebooks nesta ordem:
 
-## Estrutura do projeto
+1. [`notebooks/eda.ipynb`](notebooks/eda.ipynb): análise exploratória.
+2. [`notebooks/notebook.ipynb`](notebooks/notebook.ipynb): pré-processamento, Optuna, treinamento, avaliação e artefatos.
 
-- `README.md` — documentação do projeto
-- `requirements.txt` — dependências Python
-- `notebook.ipynb` — análise e experimentos
-- `data/` — dados de entrada
-  - `train.csv`
-  - `test.csv`
-  - `sample_submission.csv`
-- `submission.csv` — possível arquivo de submissão gerado
-- `insights.md` — anotações e conclusões do trabalho
+## Documentação
+
+- [`docs/eda.md`](docs/eda.md): explica a EDA e as hipóteses que orientam a modelagem.
+- [`docs/notebook.md`](docs/notebook.md): explica o notebook principal, incluindo a otimização com Optuna e o benchmarking dos três caminhos.
+
+## Estrutura Do Projeto
+
+- `README.md` - documentação inicial do projeto.
+- `requirements.txt` - dependências Python.
+- `notebooks/` - notebooks de EDA e modelagem.
+- `docs/` - explicações em Markdown dos notebooks.
+- `src/roots.py` - caminhos centralizados do projeto.
+- `data/` - dados de entrada:
+  - `train.csv`;
+  - `test.csv`;
+  - `sample_submission.csv`.
+- `models/` - modelos treinados e `params_path_*.json` com os melhores hiperparâmetros.
+- `reports/` - métricas, históricos de validação cruzada e figuras.
 
 ## Observações
 
-- Mantenha o ambiente virtual ativado ao instalar pacotes ou ao executar o notebook.
-- Se desejar criar um ambiente virtual em outra pasta, substitua `.venv` pelo nome desejado.
+- Mantenha o ambiente virtual ativado ao instalar pacotes ou ao executar os notebooks.
+- O notebook de modelagem reaproveita `models/params_path_*.json` quando esses arquivos existem; se forem removidos, o Optuna roda novamente.
+- Os artefatos com timestamp em `models/` e `reports/` representam execuções específicas do notebook.
 
-## Dupla do Projeto
+## Dupla Do Projeto
 
 - Estevão Augusto da Fonseca Santos
 - Gabriel Fagundes Mesquita Sousa
