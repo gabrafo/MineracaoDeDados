@@ -1,0 +1,6 @@
+{
+    "n_estimators": 216,
+    "min_samples_split": 26,
+    "min_samples_leaf": 11,
+    "max_features": null
+}
