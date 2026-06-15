@@ -41,10 +41,35 @@ Assim, o melhor caminho atual é o **Caminho B - Floresta Aleatória**.
 
 ## Requisitos
 
-- [Python 3.12.x](https://www.python.org/)
+- [Python 3.14.5](https://www.python.org/)
 - [Pip](https://pip.pypa.io/en/stable/)
+- [uv](https://docs.astral.sh/uv/) (opcional, recomendado para criar e sincronizar o ambiente com mais rapidez.)
 
-## Instalação do ambiente virtual
+## Instalação Com uv
+
+O projeto agora inclui [`pyproject.toml`](pyproject.toml) e [`.python-version`](.python-version), permitindo criar o ambiente com `uv`.
+
+Na raiz do projeto, execute:
+
+```bash
+uv sync --extra notebooks
+```
+
+Esse comando cria o ambiente virtual em `.venv/` e instala as dependências principais do projeto. O extra `notebooks` instala também o pacote necessário para abrir o Jupyter Notebook.
+
+Depois, abra o Jupyter com:
+
+```bash
+uv run jupyter notebook
+```
+
+Também é possível executar comandos Python dentro do ambiente sincronizado usando `uv run`, por exemplo:
+
+```bash
+uv run python src/roots.py
+```
+
+## Instalação Com venv E pip
 
 No Linux, macOS ou Windows (PowerShell), execute o comando abaixo na raiz do projeto:
 
@@ -55,17 +80,19 @@ python3 -m venv .venv
 Em seguida, ative o ambiente virtual:
 
 - Linux / macOS:
-  ```bash
+```bash
   source .venv/bin/activate
-  ```
+```
+
 - Windows (PowerShell):
-  ```powershell
+```powershell
   .\.venv\Scripts\Activate.ps1
-  ```
+```
+
 - Windows (cmd):
-  ```cmd
+```cmd
   .\.venv\Scripts\activate.bat
-  ```
+```
 
 > Se `python3` não estiver disponível, use `python` conforme a instalação do seu sistema.
 
@@ -81,7 +108,13 @@ Entre as dependências principais estão `pandas`, `numpy`, `scikit-learn`, `mat
 
 ## Executar O Projeto
 
-Abra o Jupyter na raiz do projeto:
+Com `uv`, abra o Jupyter na raiz do projeto com:
+
+```bash
+uv run jupyter notebook
+```
+
+Com `venv` e `pip`, mantenha o ambiente virtual ativado e abra o Jupyter com:
 
 ```bash
 jupyter notebook
@@ -102,6 +135,8 @@ O notebook principal lê os dados de `data/`, usa os caminhos definidos em [`src
 ## Estrutura Do Projeto
 
 - `README.md` - documentação inicial do projeto.
+- `pyproject.toml` - metadados e dependências para uso com `uv`.
+- `.python-version` - versão de Python sugerida para o ambiente `uv`.
 - `requirements.txt` - dependências Python.
 - `notebooks/` - notebooks de EDA e modelagem.
 - `docs/` - explicações em Markdown dos notebooks.
@@ -136,8 +171,7 @@ O repositório contém os seguintes tipos de artefatos já gerados:
 - `reports/metrics_path_*_20260605_*.csv`: métricas agregadas mais recentes.
 - `reports/history_path_*_20260605_*.csv`: métricas por fold mais recentes.
 - `reports/figures/roc_path_*_20260605_*`: pontos e imagens das curvas ROC.
-- `reports/figures/tree_path_*_20260605_*.svg`: visualizações de árvore para os
-  caminhos A e B.
+- `reports/figures/tree_path_*_20260605_*.svg`: visualizações de árvore para os caminhos A e B.
 - `models/params_path_*.json`: melhores hiperparâmetros reaproveitados pelo notebook.
 
 ## Observações
